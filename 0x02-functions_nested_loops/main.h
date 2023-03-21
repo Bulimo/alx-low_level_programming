@@ -12,28 +12,10 @@
 int _putchar(char c);
 
 /**
-  * print_alphabet - prints alphabet in lower case
-  * Return: void
+  * print_sign - prints the sign of a number
+  * @n: holds the number to be checked
+  * Return: 1 if number is greater than 0
+  *	0 if number is zero and -1 if number is less than 0
   */
-void print_alphabet(void);
-
-/**
-  * print_alphabet_x10 - prints 10 times the alphabets in lowercase
-  * Return: void
-  */
-void print_alphabet_x10(void);
-
-/**
-  * _islower - checks for lower case characters
-  * @c: int character code to be checked
-  * Return: 1 if lowercase and 0 if otherwise
-  */
-int _islower(int c);
-
-/**
-  * _isalpha - checks for alphabet characters
-  * @c: int characte to be checked if alphabet
-  * Return: 1 if alphabet and 0 if otherwise
-  */
-int _isalpha(int c);
+int print_sign(int n);
 #endif
