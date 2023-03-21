@@ -16,4 +16,12 @@ int _putchar(char c);
   * Return: void
   */
 void times_table(void);
+
+/**
+  * add - adds two integers and returns the result
+  * @x: holds first integer to be summed
+  * @y: holds second integer to be summed
+  * Return: reuslt of addition
+  */
+int add(int x, int y);
 #endif
