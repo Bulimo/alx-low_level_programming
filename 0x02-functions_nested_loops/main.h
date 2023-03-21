@@ -25,4 +25,11 @@ int print_sign(int n);
   * Return: the absolute value of n
   */
 int _abs(int n);
+
+/**
+  * print_last_digit - prints the last digit of a number
+  * @n: holds the number from which we get the last digit
+  * Return: the last digit of the number
+  */
+int print_last_digit(int n);
 #endif
