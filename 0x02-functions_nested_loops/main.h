@@ -22,4 +22,11 @@ void print_alphabet(void);
   * Return: void
   */
 void print_alphabet_x10(void);
+
+/**
+  * _islower - checks for lower case characters
+  * @c: int character code to be checked
+  * Return: 1 if lowercase and 0 if otherwise
+  */
+int _islower(int c);
 #endif
