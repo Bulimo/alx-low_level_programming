@@ -1,6 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 #include <unistd.h>
+
 /**
  * _putchar - writes the character c to stdout
  * @c: The character to print
@@ -15,4 +16,10 @@ int _putchar(char c);
   * Return: void
   */
 void print_alphabet(void);
+
+/**
+  * print_alphabet_x10 - prints 10 times the alphabets in lowercase
+  * Return: void
+  */
+void print_alphabet_x10(void);
 #endif
