@@ -1,6 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 #include <unistd.h>
+#include <stdio.h>
 
 /**
  * _putchar - writes the character c to stdout
@@ -24,4 +25,11 @@ void times_table(void);
   * Return: reuslt of addition
   */
 int add(int x, int y);
+
+/**
+  * print_to_98 - prints all natural numbers from n to 98
+  * @n: the start oint to print the numbers
+  * Return: void
+  */
+void print_to_98(int n);
 #endif
