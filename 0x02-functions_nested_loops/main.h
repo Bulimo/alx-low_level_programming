@@ -19,17 +19,10 @@ int _putchar(char c);
 void times_table(void);
 
 /**
-  * add - adds two integers and returns the result
-  * @x: holds first integer to be summed
-  * @y: holds second integer to be summed
-  * Return: reuslt of addition
-  */
-int add(int x, int y);
-
-/**
-  * print_to_98 - prints all natural numbers from n to 98
-  * @n: the start oint to print the numbers
+  * print_times_table - priints the n times table starting with 0
+  *	if n > 15 or n < 0 the function should not print
+  * @n: the size of the times table
   * Return: void
   */
-void print_to_98(int n);
+void print_times_table(int n);
 #endif
