@@ -1,5 +1,3 @@
-#include "main.h"
-
 /**
   * main - is the entry point of the program
   *
