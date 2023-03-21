@@ -12,30 +12,8 @@
 int _putchar(char c);
 
 /**
-  * print_sign - prints the sign of a number
-  * @n: holds the number to be checked
-  * Return: 1 if number is greater than 0
-  *	0 if number is zero and -1 if number is less than 0
-  */
-int print_sign(int n);
-
-/**
-  * int _abs - computes the absolute value of an integer
-  * @n: holds the number to compute its absolute value
-  * Return: the absolute value of n
-  */
-int _abs(int n);
-
-/**
-  * print_last_digit - prints the last digit of a number
-  * @n: holds the number from which we get the last digit
-  * Return: the last digit of the number
-  */
-int print_last_digit(int n);
-
-/**
-  * jack_bauer - prints every minute of the day starting form 00:00
+  * times_table - prints the 9 times table starting with 0
   * Return: void
   */
-void jack_bauer(void);
+void times_table(void);
 #endif
