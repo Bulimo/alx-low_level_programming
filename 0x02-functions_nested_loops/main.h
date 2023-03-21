@@ -15,5 +15,15 @@ int _putchar(char c);
   *
   * Return: void
   */
-void print_alphabet(void);
+void print_alphabet(void)
+{
+	int i = 'a';
+
+	while (i <= 'z')
+	{
+		_putchar(i);
+		i++;
+	}
+	_putchar("\n");
+}
 #endif
