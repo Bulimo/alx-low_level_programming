@@ -1,3 +1,8 @@
-0.__ 0-putchar.c:__ Write a program that prints *_putchar* followed by a new line.
+1. 0-putchar.c : Write a program that prints *_putchar* followed by a new line.
 
 	. The program should return 0.
+
+2. 1-alphabet.c : Write a function that prints the alphabet, in lowercase, followed by a new line.
+
+	. Prototype: void print_alphabet(void);
+	. You can only use *_putchar* twice in your code

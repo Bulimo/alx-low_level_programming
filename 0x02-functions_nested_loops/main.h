@@ -9,4 +9,11 @@
  * On error, -1 is returned, and errno is set appropriately.
  */
 int _putchar(char c);
+
+/**
+  * print_alphabet - prints alphabet in lower case
+  *
+  * Return: void
+  */
+void print_alphabet(void);
 #endif
