@@ -7,19 +7,19 @@
   */
 int main(void)
 {
-	unsigned int prev = 0;
-	unsigned int current = 1;
-	unsigned int next = 0;
+	unsigned long int prev = 0;
+	unsigned long int current = 1;
+	unsigned long int next = 0;
 	int i = 0;
 
 	for (i = 0; i < 50; i++)
 	{
 		next = current + prev;
 		if (i == 49)
-			printf("%u", next);
+			printf("%lu", next);
 		else
 		{
-			printf("%u, ", next);
+			printf("%lu, ", next);
 			prev = current;
 			current = next;
 		}
