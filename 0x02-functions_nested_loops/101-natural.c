@@ -15,11 +15,15 @@ int main(void)
 	for (i = 1; !stop; i++)
 	{
 		if ((3 * i) < 1024)
-			sum += (3 * i);
+		{
+			sum += 3 * i;
+		}
 		else
 			stop = true;
-		if ((5 * i) < 1024)
-			sum += (5 * i);
+		if ((5 * i) < 1024 && ((5 * i) % 3) != 0)
+		{
+			sum += 5 * i;
+		}
 	}
 	printf("%d\n", sum);
 	return (0);
