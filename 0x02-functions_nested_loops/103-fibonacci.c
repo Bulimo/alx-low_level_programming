@@ -2,7 +2,7 @@
 
 /**
   * main - starting point of the program
-  * Description: prints the sum of all even Fibonnacci numbers whose value is 
+  * Description: prints the sum of all even Fibonnacci numbers whose value is
   *	less than 4,000.000
   * Return: 0 for success
   */
