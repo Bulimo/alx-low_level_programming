@@ -77,3 +77,7 @@
 	. The numbers must be separated by comma, followed by a space , 
 	. You are allowed to use the standard library
 
+16. 103-fibonacci.c : By considering the terms in the Fibonacci sequence whose values do not exceed 4,000,000, write a program that finds and prints the sum of the even-valued terms, followed by a new line.
+
+	. You are allowed to use the standard library
+
