@@ -7,29 +7,30 @@
   */
 void print_number(int n)
 {
-	unsigned int tens, digit, positive = n;
-	double t_beg = 1;
+	unsigned int rev_n = 0;			/* Store the reversed number */
+	unsigned int mod = 0;			/* stores the extracted number */
 
-	if (n == 0)
-		_putchar('0');
+	if (n == 0)			/* check if number is -ve */
+		_putchar('0' + mod);
 	else
 	{
 		if (n < 0)
 		{
-			positive = n * -1;
+			n *= -1;
 			_putchar('-');
 		}
-
-		while (t_beg <= positive)
-			t_beg *= 10;
-		tens = t_beg / 10;
-
-		while (tens >= 1)
+		while (n > 0)
 		{
-			digit = positive / tens;
-			_putchar(digit + '0');
-			positive = (positive - (tens * digit));
-			tens /= 10;
+			mod = n % 10;
+			rev_n = (rev_n * 10) + mod;
+			n /= 10;
+		}
+		/* Print out the reversed number */
+		while (rev_n > 0)
+		{
+			mod = rev_n % 10;
+			rev_n /= 10;
+			_putchar('0' + mod);
 		}
 	}
 }
