@@ -12,4 +12,7 @@ int _isdigit(int c);
 
 /* mul() function prototype */
 int mul(int a, int b);
+
+/* print_numbers() function prototype */
+void print_numbers(void);
 #endif
