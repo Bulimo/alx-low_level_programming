@@ -28,3 +28,8 @@ It contains implementation of the functions below:
 	. Do not print 2 and 4
 	. You can only use _putchar twice in your code	
 
+6. 5-more_numbers.c : Write a function that prints 10 times the numbers, from 0 to 14, followed by a new line.
+
+	. Prototype: void more_numbers(void);
+	. You can only use _putchar three times in your code
+

@@ -18,4 +18,7 @@ void print_numbers(void);
 
 /* print_most_numbers() function prototype */
 void print_most_numbers(void);
+
+/* more_numbers() function prototype */
+void more_numbers(void);
 #endif
