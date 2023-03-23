@@ -7,9 +7,10 @@
   */
 void print_number(int n)
 {
-	unsigned int rev_n = 1;			/* Store the reversed number */
+	double rev_n = 1;			/* Store the reversed number */
 	unsigned int mod = 0;			/* stores the extracted number */
 	unsigned int num = n;
+	unsigned int rem = 0;
 
 	if (n == 0)			/* check if number is -ve */
 		_putchar('0' + mod);
@@ -22,15 +23,15 @@ void print_number(int n)
 		}
 		while (rev_n <= num)
 			rev_n *= 10;
-		rev_n /= 10;
+		rem = rev_n / 10;
 
 		/* Print out the reversed number */
-		while (rev_n >= 1)
+		while (rem >= 1)
 		{
-			mod = num / rev_n;
+			mod = num / rem;
 			_putchar('0' + mod);
-			num = num - (mod * rev_n);
-			rev_n /= 10;
+			num = num - (mod * rem);
+			rem /= 10;
 		}
 	}
 }
