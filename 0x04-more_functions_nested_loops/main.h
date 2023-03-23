@@ -33,4 +33,7 @@ void print_square(int size);
 
 /* print_triangle() function prototype */
 void print_triangle(int size);
+
+/* print_number() function prototype */
+void print_number(int n);
 #endif
