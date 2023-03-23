@@ -9,4 +9,7 @@ int _isupper(int c);
 
 /* _isdigit() function prototype */
 int _isdigit(int c);
+
+/* mul() function prototype */
+int mul(int a, int b);
 #endif
