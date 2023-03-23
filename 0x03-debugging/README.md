@@ -13,3 +13,7 @@ You are not coding the solution / function, you’re just testing it! However, y
 	. Don’t add or remove any lines of code, as we will be checking your line count. You are only allowed to comment out existing code.
 	. You do not have to compile with -Wall -Werror -Wextra -pedantic for this task.
 
+3. 2-largest_number.c, main.h : Fix the code in 2-largest_number.c so that it correctly prints out the largest of three numbers, no matter the case.
+
+	. Line count will not be checked for this task.
+
