@@ -21,4 +21,7 @@ void print_most_numbers(void);
 
 /* more_numbers() function prototype */
 void more_numbers(void);
+
+/* print_line() function prototype */
+void print_line(int n);
 #endif
