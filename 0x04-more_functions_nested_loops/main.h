@@ -24,4 +24,7 @@ void more_numbers(void);
 
 /* print_line() function prototype */
 void print_line(int n);
+
+/* print_diagonal() function prototype */
+void print_diagonal(int n);
 #endif
