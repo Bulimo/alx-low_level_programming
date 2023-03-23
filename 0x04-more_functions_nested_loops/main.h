@@ -30,4 +30,7 @@ void print_diagonal(int n);
 
 /* print_square() function prototype */
 void print_square(int size);
+
+/* print_triangle() function prototype */
+void print_triangle(int size);
 #endif
