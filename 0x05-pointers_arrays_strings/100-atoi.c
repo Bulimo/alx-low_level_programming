@@ -8,7 +8,8 @@ int _atoi(char *s)
 {
 	int i = 0;					/* loop counter */
 	int temp = 0;				/* hold the digit extracted */
-	int number = 0;				/* hold the number extracted */
+	double number = 0;				/* hold the number extracted */
+	int num; 
 	int sign = 1;				/* check the sign of the number */
 
 	while (s[i] != '\0')
@@ -34,7 +35,7 @@ int _atoi(char *s)
 		}
 		i++;
 	}
-	number *= sign;
+	num = number * sign;
 
-	return (number);
+	return (num);
 }
