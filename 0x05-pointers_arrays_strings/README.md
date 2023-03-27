@@ -11,3 +11,7 @@ The functions covered include:
 
 	. Prototype: void swap_int(int *a, int *b);
 
+3. 2-strlen.c : Write a function that returns the length of a string.
+
+	. Prototype: int _strlen(char *s);
+
