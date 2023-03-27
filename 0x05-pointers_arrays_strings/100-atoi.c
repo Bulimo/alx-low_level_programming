@@ -9,7 +9,7 @@ int _atoi(char *s)
 	int i = 0;					/* loop counter */
 	int temp = 0;				/* hold the digit extracted */
 	double number = 0;				/* hold the number extracted */
-	int num; 
+	int num;
 	int sign = 1;				/* check the sign of the number */
 
 	while (s[i] != '\0')
