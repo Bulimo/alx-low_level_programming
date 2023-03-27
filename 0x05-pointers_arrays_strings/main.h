@@ -20,4 +20,7 @@ void _puts(char *str);
 /* print_rev() function prototype */
 void print_rev(char *str);
 
+/* rev_string() function prototype */
+void rev_string(char *s);
+
 #endif	/* MAIN_H_INCLUDED */
