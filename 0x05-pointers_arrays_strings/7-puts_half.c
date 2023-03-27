@@ -10,10 +10,11 @@ void puts_half(char *str)
 	int len = 0;			/* store the length of the string */
 	int i = 0;				/* loop counter */
 
-	while (*(str + i++))
+	while (*(str + i++) != '\0')
 		len++;
+
 	if ((len % 2))
-		i = (len - 1) / 2;
+		i = (len / 2) + 1;
 	else
 		i = len / 2;
 	for (; i < len; i++)
