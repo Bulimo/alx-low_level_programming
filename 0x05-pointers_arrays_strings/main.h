@@ -29,4 +29,7 @@ void puts2(char *str);
 /* puts_half() function prototype */
 void puts_half(char *str);
 
+/* print_array() function prototype */
+void print_array(int *a, int n);
+
 #endif	/* MAIN_H_INCLUDED */
