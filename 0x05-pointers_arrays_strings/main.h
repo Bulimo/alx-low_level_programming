@@ -11,5 +11,7 @@ void reset_to_98(int *n);
 void swap_int(int *a, int *b);
 /* strlen() function prototype */
 int _strlen(char *s);
+/* _puts() function prototype */
+void _puts(char *str);
 
 #endif	/* MAIN_H_INCLUDED */
