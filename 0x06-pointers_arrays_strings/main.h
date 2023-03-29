@@ -25,4 +25,7 @@ void reverse_array(int *a, int n);
 /* string_toupper() function prototype */
 char *string_toupper(char *);
 
+/* cap_string() function prototype */
+char *cap_string(char *);
+
 #endif

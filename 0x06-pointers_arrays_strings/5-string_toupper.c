@@ -8,8 +8,11 @@
 char *string_toupper(char *s)
 {
 	int i = 0;				/* loop counter */
+	int len = 0;			/* string length */
 
-	while (*(s + i))
+	len = _strlen(s);
+
+	while (*(s + i) && i < len)
 	{
 		if (s[i] <= 'z' && s[i] >= 'a')
 			s[i] -= ('a' - 'A');
@@ -17,3 +20,19 @@ char *string_toupper(char *s)
 	}
 	return (s);
 }
+
+/**
+  * _strlen - returns the length of the string passed
+  * @s: the sting to find the length
+  * Return: int length of string
+  */
+int _strlen(char *s)
+{
+	int len = 0;			/* store string length */
+	int i = 0;				/* loop counter */
+
+	while (*(s + i++))
+		len++;
+	return (len);
+}
+
