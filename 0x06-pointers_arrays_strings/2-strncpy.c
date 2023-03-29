@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
   * _strncpy - function to copy n bytes from a string to another
   * @dest: the string to be copied to
