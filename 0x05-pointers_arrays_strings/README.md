@@ -50,7 +50,7 @@ The functions covered include:
 	. Prototype: char *_strcpy(char *dest, char *src);
 	. Return value: the pointer to dest
 
-11.c 100-atoi.c : Write a function that convert a string to an integer.
+11. 100-atoi.c : Write a function that convert a string to an integer.
 
 	. Prototype: int _atoi(char *s);
 	. The number in the string can be preceded by an infinite number of characters
@@ -60,4 +60,11 @@ The functions covered include:
 	. You are not allowed to declare new variables of “type” array
 	. You are not allowed to hard-code special values
 	. We will use the -fsanitize=signed-integer-overflow gcc flag to compile your code.
+
+12. 101-keygen.c : Create a program that generates random valid passwords for the program 101-crackme.
+
+	. You are allowed to use the standard library
+	. You don’t have to pass the betty-style tests (you still need to pass the betty-doc tests)
+	. man srand, rand, time
+	. gdb and objdump can help
 
