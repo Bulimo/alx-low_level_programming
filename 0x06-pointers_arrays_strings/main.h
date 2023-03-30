@@ -34,4 +34,7 @@ char *leet(char *);
 /* rot13() function prototype */
 char *rot13(char *);
 
+/* print_number() function prototype */
+void print_number(int n);
+
 #endif
