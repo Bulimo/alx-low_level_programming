@@ -37,4 +37,13 @@ char *rot13(char *);
 /* print_number() function prototype */
 void print_number(int n);
 
+/* infinite_add() function prototype */
+char *infinite_add(char *n1, char *n2, char *r, int size_r);
+
+/* _strlen() function prototype */
+int _strlen(char *s);
+
+/* rev_string() function prototype */
+void rev_string(char *s);
+
 #endif
