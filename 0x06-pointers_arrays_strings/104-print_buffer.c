@@ -30,7 +30,7 @@ void print_buffer(char *b, int size)
 					if (i == size)
 						break;
 				}
-				printf("%08x: ", b[i]);
+				printf("%8lx: ", (long unsigned)&b[i]);
 				j = 0;
 			}
 			str[j++] = (!isprint(b[i])) ? '.' : b[i];
