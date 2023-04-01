@@ -46,4 +46,7 @@ int _strlen(char *s);
 /* rev_string() function prototype */
 void rev_string(char *s);
 
+/* print_buffer() function prototype */
+void print_buffer(char *b, int size);
+
 #endif
