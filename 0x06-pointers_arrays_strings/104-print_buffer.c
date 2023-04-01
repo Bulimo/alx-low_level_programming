@@ -13,6 +13,7 @@ void print_buffer(char *b, int size)
 	char str[11];				/* hold ten bytes of the buffer */
 	int i = 0;					/* loop counter for b */
 	int j = 0;					/* loop counter for str */
+	int k = 0;					/* difference between j and 10 */
 
 	if (size <= 0)
 		printf("%s", "\n");
@@ -39,12 +40,13 @@ void print_buffer(char *b, int size)
 			i++;
 			if (i == size && j < 9)
 			{
-				for (; j <= 9; j++)
+				k = 10 - j;
+				for (; k >= 0; k--)
 				{
 					printf("%s", "  ");
-					str[j] = ' ';
+					if (i % 2 == 1)
+						printf("%s", "  ");
 				}
-				printf("%s", "  ");
 			}
 		}
 	}
