@@ -36,16 +36,16 @@ void print_buffer(char *b, int size)
 			str[j++] = (!isprint(b[i])) ? '.' : b[i];
 			printf("%02x", b[i]);
 			if (i % 2 == 1)
-				printf("%s", " ");
+				printf("%s", ":");
 			i++;
 			if (i == size && j < 9)
 			{
-				k = 10 - j;
+				k = 9 - j;
 				for (; k >= 0; k--)
 				{
-					printf("%s", "  ");
-					if (i % 2 == 1)
-						printf("%s", "  ");
+					printf("%s", "--");
+					if (k % 2 == 0)
+						printf("%s", ":");
 				}
 			}
 		}
