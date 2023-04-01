@@ -31,7 +31,7 @@ void print_buffer(char *b, int size)
 					if (i == size)
 						break;
 				}
-				printf("%lx"PRIxPTR": ", (uintptr_t)&b[i]);
+				printf("%8lx: ", (uintptr_t)&b[i]);
 				j = 0;
 			}
 			str[j++] = (!isprint(b[i])) ? '.' : b[i];
