@@ -15,7 +15,7 @@ void print_buffer(char *b, int size)
 	int j = 0;					/* loop counter for str */
 
 	if (size <= 0)
-		puts("");
+		printf("%s", "\n");
 	else
 	{
 		while (i <= size)
