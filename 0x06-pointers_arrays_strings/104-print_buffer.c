@@ -1,8 +1,6 @@
 #include "main.h"
 #include <stdio.h>
 #include <ctype.h>
-#include <inttypes.h>
-#include <stdint.h>
 
 /**
   * print_buffer - function that prints a buffer
@@ -32,7 +30,7 @@ void print_buffer(char *b, int size)
 					if (i == size)
 						break;
 				}
-				printf("%8"PRIxPTR": ", (uintptr_t)&b[i]);
+				printf("%08x: ", i);
 				j = 0;
 			}
 			str[j++] = (!isprint(b[i])) ? '.' : b[i];
