@@ -12,7 +12,7 @@ char *_strchr(char *s, char c)
 	unsigned int len;					/* length of the string */
 
 	len = _strlen(s);
-	for (i = 0; i < len; i++)
+	for (i = 0; i <= len; i++)
 	{
 		if (*(s + i) == c)
 			return (&s[i]);
