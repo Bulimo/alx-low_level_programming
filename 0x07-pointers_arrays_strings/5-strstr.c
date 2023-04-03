@@ -16,6 +16,8 @@ char *_strstr(char *haystack, char *needle)
 
 	len1 = _strlen(haystack);
 	len2 = _strlen(needle);
+	if (needle[0] == '\0')
+		return (haystack);
 	for (i = 0; i < len1; i++)
 	{
 		if (haystack[i] == needle[j])
