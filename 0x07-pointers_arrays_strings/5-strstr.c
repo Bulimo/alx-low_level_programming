@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
   * char *_strstr -  function that finds 1st instance of a substring
@@ -15,7 +14,6 @@ char *_strstr(char *haystack, char *needle)
 	int len2 = 0;				/* needle llength */
 	int k = 0;					/* count from start of instance */
 
-	printf("%s\n", haystack);
 	len1 = _strlen(haystack);
 	len2 = _strlen(needle);
 	for (i = 0; i < len1 - len2; i++)
