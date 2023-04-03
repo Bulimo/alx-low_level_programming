@@ -9,16 +9,20 @@
   */
 void print_diagsums(int *a, int size)
 {
-	unsigned int sum = 0;				/* hold the sum of diagonals */
+	int sum = 0;				/* hold the sum of diagonals */
 	int j = 0;							/* columns counter */
 	int i = 0;							/* rows counter */
 
 	for (i = 0, j = 0; (i < size && j < size); i++, j++)
+	{
 		sum = sum + a[(i * size) + j];
-	printf("%u, ", sum);
+	}
+	printf("%d, ", sum);
 
 	sum = 0;
 	for (i = 0, j = size - 1; (i < size && j >= 0); i++, j--)
+	{
 		sum = sum + a[(i * size) + j];
-	printf("%u\n", sum);
+	}
+	printf("%d\n", sum);
 }
