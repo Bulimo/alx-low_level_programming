@@ -45,3 +45,7 @@ The functions covered include:
 	. Format: see example
 	. You are allowed to use the standard library
 
+9. 100-set_string.c : Write a function that sets the value of a pointer to a char.
+
+	. Prototype: void set_string(char **s, char *to);
+
