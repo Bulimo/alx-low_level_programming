@@ -23,4 +23,5 @@ Files of functions include:
 	5. 4-pow_recursion.c : function that returns the value of x raised to the power of y.
 	6. 5-sqrt_recursion.c : function that returns the natural square root of a number.
 	7. 6-is_prime_number.c : function that returns 1 if the input integer is a prime number, otherwise return 0
-	8. 
+	8. 100-is_palindrome.c : unction that returns 1 if a string is a palindrome and 0 if not.
+

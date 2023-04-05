@@ -35,5 +35,11 @@ int check_factors(int n, int x);
 /* print_reverse() prototype */
 void print_reverse(char *s, int len);
 
+/* is_palindrome() prototype */
+int is_palindrome(char *s);
+
+/* palindrome_check() prototype */
+int palindrome_check(char *s, int i, int j);
+
 
 #endif
