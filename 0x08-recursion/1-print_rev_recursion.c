@@ -13,7 +13,7 @@ void _print_rev_recursion(char *s)
 	len = _strlen_recursion(s);
 	if (!(*s))
 	{
-		_putchar('\n');
+		/*_putchar('\n'); */
 		return;
 	}
 	print_reverse(s, len);
