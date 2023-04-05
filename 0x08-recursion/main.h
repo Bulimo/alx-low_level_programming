@@ -26,5 +26,11 @@ int sqrt_get(int n, int x);
 /* _sqrt_recursion() prototype */
 int _sqrt_recursion(int n);
 
+/* is_prime_number() prototype */
+int is_prime_number(int n);
+
+/* check_factors() prototype */
+int check_factors(int n, int x);
+
 
 #endif
