@@ -20,5 +20,11 @@ int factorial(int n);
 /* _pow_recursion() prototype */
 int _pow_recursion(int x, int y);
 
+/* sqrt_get() prototype */
+int sqrt_get(int n, int x);
+
+/* _sqrt_recursion() prototype */
+int _sqrt_recursion(int n);
+
 
 #endif
