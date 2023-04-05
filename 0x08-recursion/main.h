@@ -32,5 +32,8 @@ int is_prime_number(int n);
 /* check_factors() prototype */
 int check_factors(int n, int x);
 
+/* print_reverse() prototype */
+void print_reverse(char *s, int len);
+
 
 #endif
