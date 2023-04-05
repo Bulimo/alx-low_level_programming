@@ -19,4 +19,5 @@ Files of functions include:
 	1. 0-puts_recursion.c : function that prints a string, followed by a new line
 	2. 1-print_rev_recursion.c : function that prints a string in reverse.
 	3. 2-strlen_recursion.c : function that returns the length of a string.
-	4.
+	4. 3-factorial.c : function that returns the factorial of a given number.
+	5. 
