@@ -41,5 +41,7 @@ int is_palindrome(char *s);
 /* palindrome_check() prototype */
 int palindrome_check(char *s, int i, int j);
 
+/* wildcmp() prototype */
+int wildcmp(char *s1, char *s2);
 
 #endif
