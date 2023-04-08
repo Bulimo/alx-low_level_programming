@@ -14,4 +14,5 @@ The prototypes of all your functions and the prototype of the function` _putchar
 Files in this project include:
 
 	1. libmy.a : static library libmy.a containing all the functions requested
-	2. 
+	2. create_static_lib.sh : script that creates a static library called liball.a from all the .c files that are in the current directory. 
+
