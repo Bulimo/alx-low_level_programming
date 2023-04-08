@@ -16,6 +16,7 @@ Not allowed to use any kind of loops
 Not allowed to use static variables
 
 Files of functions include:
+
 	1. 0-puts_recursion.c : function that prints a string, followed by a new line
 	2. 1-print_rev_recursion.c : function that prints a string in reverse.
 	3. 2-strlen_recursion.c : function that returns the length of a string.

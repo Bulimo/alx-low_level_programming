@@ -10,4 +10,5 @@ Each folder in the repository is a test on specific concepts of the language.
 	. 0x06-pointers_arrays_strings
 	. 0x07-pointers_arrays_strings
 	. 0x08-recursion
+	. 0x09-static_libraries
 
