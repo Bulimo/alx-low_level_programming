@@ -25,4 +25,5 @@ The functions in the projects include:
 	1. 0-whatsmyname.c : a program that prints its name, followed by a new line.
 	2. 1-args.c : a program that prints the number of arguments passed into it.
 	3. 2-args.c : a program that prints all arguments it receives.
-	4.
+	4. 3-mul.c :  a program that multiplies two numbers.The program should print the result of the multiplication, followed by a new line.You can assume that the twn numbers and result of the multiplication can be stored in an integer,If the program does not receive two arguments,your program should print Error, followed by a new line, and return 1
+	5. 
