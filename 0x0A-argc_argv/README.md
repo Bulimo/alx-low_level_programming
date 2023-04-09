@@ -23,5 +23,6 @@ You are allowed to use the standard library
 The functions in the projects include:
 
 	1. 0-whatsmyname.c : a program that prints its name, followed by a new line.
-	2. 1-args.c : Write a program that prints the number of arguments passed into it.
-	3. 
+	2. 1-args.c : a program that prints the number of arguments passed into it.
+	3. 2-args.c : a program that prints all arguments it receives.
+	4.
