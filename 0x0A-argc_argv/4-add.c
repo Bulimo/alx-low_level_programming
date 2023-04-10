@@ -5,7 +5,7 @@
   * @argc: number of arguments passed
   * @argv: pointer to array of string arguments
   * Description: prints the product of 2 numbers supplied
-  * Return: 1 if successful, 0 otherwise
+  * Return: 0 if successful, 1 otherwise
   */
 int main(int argc, char *argv[])
 {
