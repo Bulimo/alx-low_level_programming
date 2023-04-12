@@ -7,18 +7,9 @@
   * Return: void
   */
 
-void free_grid(int **grid, int height)
+void free_grid(int **grid, int __attribute__((unused))height)
 {
-	int i = 0;				/* columns counter */
-
-	if (grid)
-	{
-
-		for (i = 0; i < height; i++)
-			free(grid[i]);
-
 		free(grid);
 		grid = NULL;
-	}
 }
 
