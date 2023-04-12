@@ -2,7 +2,7 @@
 
 /**
   * strtow - splits a string into words
-  * @ str: string to sort into words
+  * @str: string to sort into words
   * Return: pointer to array of strings, NULL otherwise
   */
 char **strtow(char *str)
@@ -17,12 +17,14 @@ char **strtow(char *str)
 	if (str == NULL || str[0] == '\0')
 		return (NULL);
 	start = first_not_of(str, ' ', 0);			/* find first index of first word */
+	if (str[start] == '\0')
+		return (NULL);
 	s = malloc(sizeof(char *) * num_words);
 	if (s == NULL)
 		return (NULL);
 	while (str[start] != '\0')
 	{
-		end = first_of(str, ' ', start + 1);	/* find last index */
+		end = first_of(str, ' ', start);	/* find last index */
 		if (str[end] == '\0')
 			end = _strlen(str);
 		for (i = 0; i < end - start; i++)
@@ -36,7 +38,7 @@ char **strtow(char *str)
 			s[j] = _strncpy(s[j], word, end - start);
 			j++;
 		}
-		start = first_not_of(str, ' ', end + 1);
+		start = first_not_of(str, ' ', end);
 	}
 	for (; j < num_words; j++)
 		s[j] = NULL;
