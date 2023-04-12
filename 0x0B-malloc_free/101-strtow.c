@@ -11,8 +11,7 @@ char **strtow(char *str)
 	char word[25];						/* store an arbitrary word length */
 	char **s;					/* pointer to arbitrar number of words */
 	int i = 0, j = 0;			/* loop counters */
-	int start = 0;						/* start index of words */
-	int end = 0;						/* end index of a word */
+	int start = 0, end = 0;				/* start and end index of a word */
 
 	if (str == NULL || str[0] == '\0')
 		return (NULL);
@@ -34,7 +33,12 @@ char **strtow(char *str)
 		{
 			s[j] = malloc(sizeof(char) * (end - start + 1));
 			if (s[j] == NULL)
+			{
+				for (i = 0; i < j; i++)
+					free(s[i]);
+				free(s);
 				return (NULL);
+			}
 			s[j] = _strncpy(s[j], word, end - start);
 			j++;
 		}
