@@ -7,8 +7,8 @@
   */
 char **strtow(char *str)
 {
-	int num_words = 500;
-	char word[100];						/* store an arbitrary word length */
+	int num_words = 50;
+	char word[50];						/* store an arbitrary word length */
 	char **s;					/* pointer to arbitrar number of words */
 	int i = 0, j = 0;			/* loop counters */
 	int start = 0;						/* start index of words */
