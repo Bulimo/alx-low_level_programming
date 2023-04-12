@@ -7,45 +7,41 @@
   */
 char **strtow(char *str)
 {
-	int num_words = 50;
-	char word[25];						/* store an arbitrary word length */
+	int num_words = 0;
 	char **s;					/* pointer to arbitrar number of words */
 	int i = 0, j = 0;			/* loop counters */
 	int start = 0, end = 0;				/* start and end index of a word */
 
 	if (str == NULL || str[0] == '\0')
 		return (NULL);
-	start = first_not_of(str, ' ', 0);			/* find first index of first word */
-	if (str[start] == '\0')
+	for (i = 0; str[i] != '\0'; i++)
+		if (str[i] != ' ' && (i == 0 || str[i + 1] == ' '))
+			num_words++;
+	if (!num_words)
 		return (NULL);
 	s = malloc(sizeof(char *) * num_words);
 	if (s == NULL)
 		return (NULL);
+	start = first_not_of(str, ' ', 0);			/* find first index of first word */
 	while (str[start] != '\0')
 	{
 		end = first_of(str, ' ', start);	/* find last index */
 		if (str[end] == '\0')
 			end = _strlen(str);
-		for (i = 0; i < end - start; i++)
-			word[i] = str[start + i];
-		word[i] = '\0';
-		if (j < num_words)
+		s[j] = malloc(sizeof(char) * (end - start + 1));
+		if (s[j] == NULL)
 		{
-			s[j] = malloc(sizeof(char) * (end - start + 1));
-			if (s[j] == NULL)
-			{
-				for (i = 0; i < j; i++)
-					free(s[i]);
-				free(s);
-				return (NULL);
-			}
-			s[j] = _strncpy(s[j], word, end - start);
-			j++;
+			for (i = 0; i < j; i++)
+				free(s[i]);
+			free(s);
+			return (NULL);
 		}
+		s[j] = _strncpy(s[j], &str[start], end - start);
+		s[j][end - start] = '\0';
+		j++;
 		start = first_not_of(str, ' ', end);
 	}
-	for (; j < num_words; j++)
-		s[j] = NULL;
+	s[j] = NULL;
 	return (s);
 }
 
