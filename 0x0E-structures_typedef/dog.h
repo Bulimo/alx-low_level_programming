@@ -1,5 +1,7 @@
 #ifndef DOG_H_INCLUDED
 #define DOG_H_INCLUDED
+#include <stdlib.h>
+#include <stdio.h>
 
 /**
   * struct dog - describes a dog
@@ -15,5 +17,6 @@ struct dog
 
 };
 void init_dog(struct dog *d, char *name, float age, char *owner);
+void print_dog(struct dog *d);
 
 #endif
