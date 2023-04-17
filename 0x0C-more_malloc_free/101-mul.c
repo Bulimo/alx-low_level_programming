@@ -43,7 +43,6 @@ int *multiplication(char *s1, char *s2)
 {
 	int *result = NULL;
 	int len1 = 0, len2 = 0;
-	int carry = 0;
 	int i = 0, j = 0;
 	int product = 0;
 
@@ -63,19 +62,12 @@ int *multiplication(char *s1, char *s2)
 	/* multiply starting from the last digit */
 	for (i = len1 - 1; i >= 0; i--)
 	{
-		carry = 0;
 		for (j = len2 - 1; j >= 0; j--)
 		{
 			product = (s1[i] - '0') * (s2[j] - '0');
-			product += (carry + result[i + j + 1]);
-			if (product > 9)
-			{
-				carry = product / 10;
-				product %= 10;
-			}
-			else
-				carry = 0;
-			result[i + j + 1] = product;
+			product += (result[i + j + 1]);
+			result[i + j] += product / 10;
+			result[i + j + 1] = product % 10;
 		}
 	}
 	return (result);
