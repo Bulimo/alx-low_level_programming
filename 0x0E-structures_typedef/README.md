@@ -21,4 +21,6 @@
 					. name, type = char *
 					. age, type = float
 					. owner, type = char *
-	2. 
+
+	2. 1-init_dog.c :  a function that initialize a variable of type struct dog
+	3. 
