@@ -26,7 +26,6 @@ int main(int argc, char *argv[])
 	}
 	len1 = _strlen(argv[1]);
 	len2 = _strlen(argv[2]);
-	printf("in main: len1 = %d, len2 = %d\n", len1, len2);
 
 	result = multiplication(argv[1], argv[2]);
 	print_result(result, len1 + len2);
@@ -51,7 +50,6 @@ int *multiplication(char *s1, char *s2)
 	/* get string lengths */
 	len1 = _strlen(s1);
 	len2 = _strlen(s2);
-	printf("in multiplication: len1 = %d, len2 = %d\n", len1, len2);
 
 	result = malloc(sizeof(int) * (len1 + len2));
 	if (result == NULL)
@@ -93,16 +91,14 @@ void print_result(int *result, int len)
 {
 	int i = 0;
 
-	for (i = 0; i < len ; i++)
-	{
-		if (i != 0)
-			break;
-	}
+	for (i = 0; i < len && result[i] == 0; i++)
+		;
+
 	if (i == len)
-		_putchar('0');
+		printf("%d", 0);
 	for (; i < len; i++)
-		_putchar(result[i] + '0');
-	_putchar('\n');
+		printf("%d", result[i]);
+	printf("%s", "\n");
 }
 
 /**
