@@ -23,4 +23,10 @@
 	1. 0-print_name.c : a function that prints a name.
 	2. 1-array_iterator.c : a function that executes a function given as a parameter on each element of an array.
 	3. 2-int_index.c : a function that searches for an integer.
-	4. 
+	4. 3-main.c : a program that performs simple operations.
+
+			. 3-op_functions.c : contains functions that do calculations
+			. 3-get_op_func.c : contain the function that selects the correct function to perform the operation asked by the user. You’re not allowed to declare any other function.
+			. 3-calc.h : contain all the function prototypes and data structures used by the program
+
+	5.
