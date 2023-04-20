@@ -18,7 +18,7 @@ int main(int argc, char **argv)
 	}
 
 	number_of_bytes = atoi(argv[1]);
-	if (number_of_bytes <= 0)
+	if (number_of_bytes < 0)
 	{
 		puts("Error");
 		return (2);
@@ -38,7 +38,7 @@ void print_opcode(char *address, int number_of_bytes)
 {
 	int i = 0;
 
-	if (address != NULL)
+	if (address != NULL && number_of_bytes > 0)
 	{
 		for (i = 0; i < number_of_bytes; i++)
 		{
