@@ -6,8 +6,8 @@
 #include <stdarg.h>
 
 /**
- * struct dt - struct
- * @letter: letter signifying data type
+ * struct data_types - struct of functions to print dat types
+ * @type: letter signifying data type
  * @func: function ptr
  */
 struct data_types

@@ -3,7 +3,7 @@
 
 /**
   * print_all - prints any type of argument passed
-  * @format: determines type of argument passed to function
+  * @format: determines data type passed to function
   * Return: nothing
   */
 void print_all(const char * const format, ...)
@@ -30,10 +30,10 @@ void print_all(const char * const format, ...)
 			{
 				printf("%s", separator);
 				my_data[j].func(parg);
+				separator = ", ";
 			}
 			j++;
 		}
-		separator = ", ";
 		i++;
 	}
 	va_end(parg);
