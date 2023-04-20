@@ -3,88 +3,49 @@
 
 /**
   * print_all - prints any type of argument passed
-  * @format: determines data type passed to function
+  * @format: determines type of argument passed to function
   * Return: nothing
   */
 void print_all(const char * const format, ...)
 {
-	int i = 0;					/* format counter */
-	int j = 0;
+	int i = 0, print_separator = 0;
+	char *str_val = NULL, *separator = "";
 	va_list parg;
-	char *separator = "";
-	a_data_type my_data[] = {
-									{'c', print_char},
-									{'i', print_int},
-									{'f', print_float},
-									{'s', print_string},
-									{'\0', NULL}
-								};
 
 	va_start(parg, format);
 	while (format != NULL && format[i] != '\0')
 	{
-		j = 0;
-		while (my_data[j].type != '\0')
+		print_separator = 0;
+		switch (format[i])
 		{
-			if (my_data[j].type == format[i])
-			{
-				printf("%s", separator);
-				my_data[j].func(parg);
-				separator = ", ";
-			}
-			j++;
+			case 'c':
+				printf("%s%c", separator, va_arg(parg, int));
+				print_separator = 1;
+				break;
+			case 'i':
+				printf("%s%d", separator, va_arg(parg, int));
+				print_separator = 1;
+				break;
+			case 'f':
+				printf("%s%f", separator, va_arg(parg, double));
+				print_separator = 1;
+				break;
+			case 's':
+				str_val = va_arg(parg, char *);
+				if (str_val == NULL)
+				{
+					printf("%s%s", separator, "(nil)");
+					print_separator = 1;
+					break;
+				}
+				printf("%s%s", separator, str_val);
+				print_separator = 1;
+				break;
 		}
 		i++;
+		if (print_separator)
+		separator = ", ";
 	}
 	va_end(parg);
 	printf("%s", "\n");
-}
-
-/**
- * print_char - prints char
- * @parg: pointer to variable argument list
- * Return: nothing
- */
-void print_char(va_list parg)
-{
-	printf("%c", va_arg(parg, int));
-}
-
-/**
- * print_int - prints int
- * @parg: pointer to variable argument list
- * Return: nothing
- */
-void print_int(va_list parg)
-{
-	printf("%d", va_arg(parg, int));
-}
-
-/**
- * print_float - prints float
- * @parg: pointer to variable argument list
- * Return: nothing
- */
-void print_float(va_list parg)
-{
-	printf("%f", va_arg(parg, double));
-}
-
-/**
- * print_string - prints string
- * @parg: pointer to variable argument list
- * Return: nothing
- */
-void print_string(va_list parg)
-{
-	char *s;
-
-	s = va_arg(parg, char *);
-
-	if (s == NULL)
-	{
-		printf("(nil)");
-		return;
-	}
-	printf("%s", s);
 }
