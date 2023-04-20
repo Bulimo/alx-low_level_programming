@@ -29,4 +29,5 @@
 			. 3-get_op_func.c : contain the function that selects the correct function to perform the operation asked by the user. You’re not allowed to declare any other function.
 			. 3-calc.h : contain all the function prototypes and data structures used by the program
 
-	5.
+	5. 100-main_opcodes.c :  a program that prints the opcodes of its own main function.
+
