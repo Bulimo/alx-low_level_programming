@@ -38,7 +38,6 @@ void print_opcode(char *address, int number_of_bytes)
 {
 	int i = 0;
 
-	printf("number of butes in print_opcode = %d\n", number_of_bytes);
 	if (address != NULL && number_of_bytes > 0)
 	{
 		for (i = 0; i < number_of_bytes; i++)
