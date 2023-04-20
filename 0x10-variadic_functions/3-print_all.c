@@ -30,10 +30,10 @@ void print_all(const char * const format, ...)
 			{
 				printf("%s", separator);
 				my_data[j].func(parg);
+				separator = ", ";
 			}
 			j++;
 		}
-		separator = ", ";
 		i++;
 	}
 	va_end(parg);
