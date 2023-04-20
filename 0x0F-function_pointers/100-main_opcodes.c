@@ -42,11 +42,6 @@ void print_opcode(char *address, int number_of_bytes)
 	{
 		for (i = 0; i < number_of_bytes; i++)
 		{
-			if (address[i] == 0xcc || address[i] == 0x00)
-			{
-				printf("%s", "\n");
-				return;
-			}
 			if (i == 0)
 				printf("%02hhx", address[i]);
 			else
