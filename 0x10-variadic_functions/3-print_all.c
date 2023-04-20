@@ -13,7 +13,7 @@ void print_all(const char * const format, ...)
 	va_list parg;
 
 	va_start(parg, format);
-	while (format[i] != '\0' && format != NULL)
+	while (format != NULL && format[i] != '\0')
 	{
 		if (i != 0 && (format[i] == 'c' || format[i] == 'i' ||
 					format[i] == 'f' || format[i] == 's'))
