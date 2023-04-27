@@ -18,4 +18,6 @@ Each folder in the repository is a test on specific concepts of the language.
 	. 0x0E-structures_typedef
 	. 0x0F-function_pointers
 	. 0x10-variadic_functions
+	. 0x11. C - printf
+	. 0x12-singly_linked_lists
 
