@@ -7,9 +7,9 @@ main:
 		push	rbp
 
 		mov		rdi, message
-		mov		rax, 0
 
 		call	printf wrt ..plt
+		mov		rax, 0
 		pop		rbp
 
 		ret		0
