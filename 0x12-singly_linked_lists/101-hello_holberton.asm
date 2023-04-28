@@ -12,7 +12,7 @@ main:
 		call	printf wrt ..plt
 		pop		rbp
 
-		ret
+		ret		0
 
 	message:	db		"Hello, Holberton", 10, 0
 
