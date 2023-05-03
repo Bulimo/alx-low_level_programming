@@ -49,4 +49,3 @@
 	11. 10-delete_nodeint.c : a function that deletes the node at index index of a listint_t linked list.
 	12. 100-reverse_listint.c : a function that reverses a listint_t linked list.
 	13. 101-print_listint_safe.c : a function that can print a listint_t linked list with a loop
-	14. 
