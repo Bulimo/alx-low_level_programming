@@ -19,9 +19,9 @@ int get_bit(unsigned long int n, unsigned int index)
 			num *= 2;
 		if (num > n)
 			return (-1);
-		return ((n & num) >= 1 ? 1 : 0);
+		return ((n >> index) & 1);
 	}
 	if (index == 0)
-		return ((n & 1) >= 1 ? 1 : 0);
+		return (n & 1);
 	return (-1);
 }
