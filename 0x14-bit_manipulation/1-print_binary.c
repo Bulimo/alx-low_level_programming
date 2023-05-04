@@ -7,21 +7,10 @@
   */
 void print_binary(unsigned long int n)
 {
-	unsigned long int num = 0;
-	int i = 0;
+	if (n > 1)
+		print_binary(n >> 1);
 
-	if (n <= 0)
-		_putchar('0');
-	for (i = 64; i >= 0; i--)
-	{
-		num = _pow(2, i);
-		if (num <= n)
-			(n & num) ? _putchar('1') : _putchar('0');
-	}
-	/*if (n > 1)*/
-	/*	print_binary(n >> 1);*/
-
-	/*_putchar('0' + (n & 0x1));*/
+	_putchar('0' + (n & 0x1));
 
 }
 
