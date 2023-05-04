@@ -12,7 +12,7 @@ void print_binary(unsigned long int n)
 
 	if (n <= 0)
 		_putchar('0');
-	for (i = 31; i >= 0; i--)
+	for (i = 64; i >= 0; i--)
 	{
 		num = _pow(2, i);
 		if (num <= n)
