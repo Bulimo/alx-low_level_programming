@@ -21,4 +21,5 @@ Each folder in the repository is a test on specific concepts of the language.
 	. 0x11. C - printf
 	. 0x12-singly_linked_lists
 	. 0x13-more_singly_linked_lists
+	. 0x14-bit_manipulation
 
