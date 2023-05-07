@@ -50,4 +50,5 @@
 	12. 100-reverse_listint.c : a function that reverses a listint_t linked list.
 	13. 101-print_listint_safe.c : a function that can print a listint_t linked list with a loop
 	14. 102-free_listint_safe.c :  a function that frees a listint_t list.
-	15.
+	15. 103-find_loop.c : a function that finds the loop in a linked list.
+
