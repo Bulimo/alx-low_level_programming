@@ -17,6 +17,7 @@ size_t print_listint_safe(const listint_t *head)
 		printf("[%p] %d\n", (void *)head, head->n);
 		arr_address[count] = head;
 		head = head->next;
+		count++;
 		for (i = 0; i < count; i++)
 		{
 			if (head == arr_address[i])
@@ -25,7 +26,6 @@ size_t print_listint_safe(const listint_t *head)
 				break;
 			}
 		}
-		count++;
 		if (count >= 500)
 			exit(98);
 	}
