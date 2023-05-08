@@ -24,5 +24,6 @@ i	. What are file descriptors; the 3 standard file descriptors, what are their p
 ## Description of files in the repository
 
 	1. 0-read_textfile.c :  a function that reads a text file and prints it to the POSIX standard output.
-	2. 
+	2. 1-create_file.c : a function that creates a file.
+	3. 
 
