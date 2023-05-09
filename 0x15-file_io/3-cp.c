@@ -1,7 +1,4 @@
 #include "main.h"
-#include <fcntl.h>
-#include <sys/types.h>
-#include <sys/stat.h>
 
 #define BUFFER  1024
 
@@ -15,7 +12,6 @@
 int main(int argc, char **argv)
 {
 	char	buffer[BUFFER] = {'\0'};
-	/*size_t	count = 0	len = 0;*/
 	ssize_t	read_count = 0,	write_count = 0;
 	int		fd_from = 0,	fd_to = 0;
 
@@ -24,13 +20,12 @@ int main(int argc, char **argv)
 	fd_from = open(argv[1], O_RDONLY);
 	if (fd_from == -1)
 		print_error(98, argv[1]);
+	fd_to = open(argv[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
+	if (fd_to == -1)
+		print_error(99, argv[2]);
 	read_count = read(fd_from, buffer, BUFFER);
 	if (read_count == -1)
 		print_error(98, argv[1]);
-	fd_to = open(argv[2], O_CREAT | O_RDWR |
-					O_APPEND | O_TRUNC, 0664);
-	if (fd_to == -1)
-		print_error(99, argv[2]);
 	while (read_count)
 	{
 		write_count = write(fd_to, buffer, read_count);
@@ -45,25 +40,6 @@ int main(int argc, char **argv)
 	if (close(fd_from) == -1)
 		print_error(fd_from, argv[1]);
 	return (0);
-}
-
-/**
-  * _strlen - returns the length of the string passed
-  * @s: the sting to find the length
-  * Return: int length of string
-  */
-size_t _strlen(char *s)
-{
-	size_t len = 0;			/* store string length */
-	size_t i = 0;				/* loop counter */
-
-	if (s != NULL)
-	{
-
-		while (*(s + i++))
-			len++;
-	}
-	return (len);
 }
 
 /**
