@@ -16,18 +16,14 @@ int main(int argc, char **argv)
 	if (argc != 3)
 		print_error(97, argv[0]);
 
-	/*sets file descriptor for copy-to file*/
 	fd_to = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
 	if (fd_to == -1)
 		print_error(99, argv[2]);
 
-	/*sets file descriptor for copy-from file*/
 	fd_from = open(argv[1], O_RDONLY);
 	if (fd_from == -1)
 		print_error(98, argv[1]);
 
-	/*reads original file as long as there's more than 0 to read*/
-	/*copies/writes contents into new file */
 	while ((read_count = read(fd_from, buffer, 1024)) != 0)
 	{
 		if (read_count == -1)
@@ -63,7 +59,7 @@ void print_error(int error, char *filename)
 			exit(error);
 			break;
 		case 97:
-			dprintf(2, "Usage: %s file_from file_to\n", filename);
+			dprintf(2, "Usage: cp file_from file_to\n");
 			exit(97);
 			break;
 		default:
