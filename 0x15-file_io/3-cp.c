@@ -51,19 +51,20 @@ void print_error(int error, char *filename)
 	switch (error)
 	{
 		case 98:
-			dprintf(2, "Error: Can't read from file %s\n", filename);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n",
+					filename);
 			exit(error);
 			break;
 		case 99:
-			dprintf(2, "Error: Can't write to %s\n", filename);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", filename);
 			exit(error);
 			break;
 		case 97:
-			dprintf(2, "Usage: cp file_from file_to\n");
+			dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 			exit(97);
 			break;
 		default:
-			dprintf(2, "Error: Can't close fd %d\n", error);
+			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", error);
 			exit(100);
 			break;
 	}
