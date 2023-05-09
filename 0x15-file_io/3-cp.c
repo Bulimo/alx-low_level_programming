@@ -10,32 +10,29 @@
   */
 int main(int argc, char **argv)
 {
-	int fd_from, fd_to, read_count, write_count;
-	char *buffer[1024];
+	char	buffer[1024] = {'\0'};
+	ssize_t	read_count = 0,	write_count = 0;
+	int		fd_from = 0,	fd_to = 0;
 
 	if (argc != 3)
 		print_error(97, argv[0]);
-
-	/*sets file descriptor for copy-to file*/
-	fd_to = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
-	if (fd_to == -1)
-		print_error(99, argv[2]);
-
-	/*sets file descriptor for copy-from file*/
 	fd_from = open(argv[1], O_RDONLY);
 	if (fd_from == -1)
 		print_error(98, argv[1]);
-
-	/*reads original file as long as there's more than 0 to read*/
-	/*copies/writes contents into new file */
-	while ((read_count = read(fd_from, buffer, 1024)) != 0)
+	fd_to = open(argv[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
+	if (fd_to == -1)
+		print_error(99, argv[2]);
+	read_count = read(fd_from, buffer, 1024);
+	if (read_count == -1)
+		print_error(98, argv[1]);
+	while (read_count)
 	{
+		write_count = write(fd_to, buffer, read_count);
+		if (write_count == -1 && write_count != read_count)
+			print_error(99, argv[2]);
+		read_count = read(fd_from, buffer, 1024);
 		if (read_count == -1)
 			print_error(98, argv[1]);
-
-		write_count = write(fd_to, buffer, read_count);
-		if (write_count == -1)
-			print_error(99, argv[2]);
 	}
 	if (close(fd_to) == -1)
 		print_error(fd_to, argv[2]);
