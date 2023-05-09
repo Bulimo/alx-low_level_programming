@@ -11,7 +11,7 @@
 int main(int argc, char **argv)
 {
 	int fd_from, fd_to, read_count, write_count;
-	char *buffer[1024];
+	char buffer[1024];
 
 	if (argc != 3)
 		print_error(97, argv[0]);
