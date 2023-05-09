@@ -27,7 +27,6 @@ int main(int argc, char **argv)
 	read_count = read(fd_from, buffer, BUFFER);
 	if (read_count == -1)
 		print_error(98, argv[1]);
-	printf("read_count = %ld\n", read_count);
 	fd_to = open(argv[2], O_CREAT | O_RDWR |
 					O_APPEND | O_TRUNC, 0664);
 	if (fd_to == -1)
@@ -40,7 +39,6 @@ int main(int argc, char **argv)
 		read_count = read(fd_from, buffer, BUFFER);
 		if (read_count == -1)
 			print_error(98, argv[1]);
-		printf("read_count = %ld\n", read_count);
 	}
 	if (close(fd_to) == -1)
 		print_error(fd_to, argv[2]);
