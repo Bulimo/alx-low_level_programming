@@ -1,6 +1,5 @@
 #include "main.h"
 
-#define BUFFER  1024
 
 /**
   * main - start point of the program
@@ -11,7 +10,7 @@
   */
 int main(int argc, char **argv)
 {
-	char	buffer[BUFFER] = {'\0'};
+	char	buffer[1024] = {'\0'};
 	ssize_t	read_count = 0,	write_count = 0;
 	int		fd_from = 0,	fd_to = 0;
 
@@ -23,7 +22,7 @@ int main(int argc, char **argv)
 	fd_to = open(argv[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
 	if (fd_to == -1)
 		print_error(99, argv[2]);
-	read_count = read(fd_from, buffer, BUFFER);
+	read_count = read(fd_from, buffer, 1024);
 	if (read_count == -1)
 		print_error(98, argv[1]);
 	while (read_count)
@@ -31,7 +30,7 @@ int main(int argc, char **argv)
 		write_count = write(fd_to, buffer, read_count);
 		if (write_count == -1 && write_count != read_count)
 			print_error(99, argv[2]);
-		read_count = read(fd_from, buffer, BUFFER);
+		read_count = read(fd_from, buffer, 1024);
 		if (read_count == -1)
 			print_error(98, argv[1]);
 	}
