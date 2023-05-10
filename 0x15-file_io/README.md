@@ -27,5 +27,6 @@ i	. What are file descriptors; the 3 standard file descriptors, what are their p
 	2. 1-create_file.c : a function that creates a file.
 	3. 2-append_text_to_file.c :  a function that appends text at the end of a file.
 	4. 3-cp.c : a program that copies the content of a file to another file.
-	5. 
+	5. 100-elf_header.c : a program that displays the information contained in the ELF header at the start of an ELF file.
+
 
