@@ -1,18 +1,16 @@
 #include "main.h"
 
-/*
- * main - Displays the information contained in the
- *        ELF header at the start of an ELF file.
+/**
+ * main - starting point of the program
  * @argc: The number of arguments supplied to the program.
  * @argv: An array of pointers to the arguments.
- *
+ * Description: displays information in the header of an ELF file
  * Return: 0 on success.
- *
  */
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-	Elf64_Ehdr *header;
+	Elf64_Ehdr *elf;
 	ssize_t	 fd_read, read_count;
 
 	if (argc != 2)
@@ -21,34 +19,34 @@ int main(int argc, char *argv[])
 	fd_read = open(argv[1], O_RDONLY);
 	if (fd_read == -1)
 		print_error(1, argv[1]);
-	header = malloc(sizeof(Elf64_Ehdr));
-	if (header == NULL)
+	elf = malloc(sizeof(Elf64_Ehdr));
+	if (elf == NULL)
 	{
 		if (close(fd_read) == -1)
 			print_error(2, argv[1]);
 		print_error(3, argv[1]);
 	}
-	read_count = read(fd_read, header, sizeof(Elf64_Ehdr));
+	read_count = read(fd_read, elf, sizeof(Elf64_Ehdr));
 	if (read_count == -1)
 	{
-		free(header);
+		free(elf);
 		if (close(fd_read) == -1)
 			print_error(2, argv[1]);
 		print_error(3, argv[1]);
 	}
 
-	check_elf(header->e_ident);
+	check_elf(elf->e_ident);
 	printf("ELF Header:\n");
-	print_magic(header->e_ident);
-	print_class(header->e_ident);
-	print_data(header->e_ident);
-	print_version(header->e_ident);
-	print_osabi(header->e_ident);
-	print_abi(header->e_ident);
-	print_type(header->e_type, header->e_ident);
-	print_entry(header->e_entry, header->e_ident);
+	print_magic(elf->e_ident);
+	print_class(elf->e_ident);
+	print_data(elf->e_ident);
+	print_version(elf->e_ident);
+	print_osabi(elf->e_ident);
+	print_abi(elf->e_ident);
+	print_type(elf->e_type, elf->e_ident);
+	print_entry(elf->e_entry, elf->e_ident);
 
-	free(header);
+	free(elf);
 	if (close(fd_read) == -1)
 	print_error(2, argv[1]);
 	return (0);
@@ -57,6 +55,7 @@ int main(int argc, char *argv[])
 /**
  * check_elf - Checks if a file is an ELF file.
  * @e_ident: A pointer to an array containing the ELF magic numbers.
+ * Return: nothing
  */
 void check_elf(unsigned char *e_ident)
 {
@@ -71,6 +70,7 @@ void check_elf(unsigned char *e_ident)
 /**
  * print_magic - Prints the magic numbers of an ELF header.
  * @e_ident: A pointer to an array containing the ELF magic numbers.
+ * Return: nothing
  */
 void print_magic(unsigned char *e_ident)
 {
@@ -91,6 +91,7 @@ void print_magic(unsigned char *e_ident)
 /**
  * print_class - Prints the class of an ELF header.
  * @e_ident: A pointer to an array containing the ELF class.
+ * Return: nothing
  */
 void print_class(unsigned char *e_ident)
 {
@@ -115,6 +116,7 @@ void print_class(unsigned char *e_ident)
 /**
  * print_data - Prints the data of an ELF header.
  * @e_ident: A pointer to an array containing the ELF class.
+ * Return: nothing
  */
 void print_data(unsigned char *e_ident)
 {
@@ -139,6 +141,7 @@ void print_data(unsigned char *e_ident)
 /**
  * print_version - Prints the version of an ELF header.
  * @e_ident: A pointer to an array containing the ELF version.
+ * Return: nothing
  */
 void print_version(unsigned char *e_ident)
 {
@@ -158,6 +161,7 @@ void print_version(unsigned char *e_ident)
 /**
  * print_osabi - Prints the OS/ABI of an ELF header.
  * @e_ident: A pointer to an array containing the ELF version.
+ * Return: nothing
  */
 void print_osabi(unsigned char *e_ident)
 {
@@ -203,6 +207,7 @@ void print_osabi(unsigned char *e_ident)
 /**
  * print_abi - Prints the ABI version of an ELF header.
  * @e_ident: A pointer to an array containing the ELF ABI version.
+ * Return: nothing
  */
 void print_abi(unsigned char *e_ident)
 {
@@ -213,6 +218,7 @@ void print_abi(unsigned char *e_ident)
  * print_type - Prints the type of an ELF header.
  * @e_type: The ELF type.
  * @e_ident: A pointer to an array containing the ELF class.
+ * Return: nothing
  */
 void print_type(unsigned int e_type, unsigned char *e_ident)
 {
@@ -247,6 +253,7 @@ void print_type(unsigned int e_type, unsigned char *e_ident)
  * print_entry - Prints the entry point of an ELF header.
  * @e_entry: The address of the ELF entry point.
  * @e_ident: A pointer to an array containing the ELF class.
+ * Return: nothing
  */
 void print_entry(unsigned long int e_entry, unsigned char *e_ident)
 {
@@ -267,7 +274,7 @@ void print_entry(unsigned long int e_entry, unsigned char *e_ident)
 
 /**
  * print_error - prints an error and exits the program
- * @int: error code
+ * @error: error code
  * @s: file name
  * Return: nothing
  */
