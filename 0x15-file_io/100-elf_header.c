@@ -201,7 +201,7 @@ void print_osabi(unsigned char *e_ident)
 			printf("Standalone App\n");
 			break;
 		default:
-			printf("\n");
+			printf("<unknown: %x>\n", e_ident[EI_OSABI]);
 	}
 }
 
