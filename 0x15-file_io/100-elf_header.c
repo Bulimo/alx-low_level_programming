@@ -154,7 +154,7 @@ void print_version(unsigned char *e_ident)
 			printf(" (current)\n");
 			break;
 		default:
-			printf("Invalid version\n");
+			printf("\n");
 			break;
 	}
 }
@@ -201,7 +201,7 @@ void print_osabi(unsigned char *e_ident)
 			printf("Standalone App\n");
 			break;
 		default:
-			printf("<unknown:\n");
+			printf("\n");
 	}
 }
 
