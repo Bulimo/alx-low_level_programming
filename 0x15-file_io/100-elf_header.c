@@ -82,7 +82,8 @@ void print_magic(unsigned char *e_ident)
 	{
 		if (i == 0)
 			printf("%02x", e_ident[i]);
-		printf(" %02x", e_ident[i]);
+		else
+			printf(" %02x", e_ident[i]);
 
 	}
 	printf("\n");
