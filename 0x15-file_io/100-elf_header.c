@@ -246,7 +246,7 @@ void print_type(unsigned int e_type, unsigned char *e_ident)
 			printf("CORE (Core file)\n");
 			break;
 		default:
-			printf("<unknown:\n");
+			printf("\n");
 	}
 }
 
