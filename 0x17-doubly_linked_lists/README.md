@@ -48,4 +48,6 @@
     . 6-sum_dlistint.c - a function that returns the sum of all the data (n) of a dlistint_t linked list
     . 7-insert_dnodeint.c - a function that inserts a new node at a given position.
     . 8-delete_dnodeint.c - a function that deletes the node at index index of a dlistint_t linked list.
-    .
+    . 100-password - the password for crackme4.
+    . 102-result - Find the largest palindrome made from the product of two 3-digit numbers.
+    . 103-keygen.c - a keygen for crackme5.
