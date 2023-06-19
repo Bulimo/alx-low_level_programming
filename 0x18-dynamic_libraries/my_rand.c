@@ -1,27 +1,17 @@
+#include <stdlib.h>
+
+
 /**
  * rand - generate random numbers
  *
  * Return: random numbers
  */
-int rand(void)
-{
-	static int i;
+int rand(void) {
+	static int numbers[] = {9, 8, 10, 24, 75, 9};
+	static int index = 0;
 
-	switch (i)
-	{
-		case 0:
-			return (9);
-		case 1:
-			return (8);
-		case 2:
-			return (10);
-		case 3:
-			return (24);
-		case 4:
-			return (75);
-		case 5:
-			return (9);
-	}
-	i++;
-	return (9);
+	int num = numbers[index];
+	index = (index + 1) % (sizeof(numbers) / sizeof(numbers[0]));
+
+	return num;
 }
