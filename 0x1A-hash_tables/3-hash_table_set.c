@@ -10,24 +10,23 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index = 0;
-	hash_node_t *new = NULL, *current = NULL;
+	hash_node_t *new = NULL;
 
 	/* check that the table, key and key[0] are not null */
-	if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
+	if (!ht || !(ht->array) || !key || *key == '\0' || !value)
 		return (0);
 	/* create a new hash_table_node */
 	new = create_node(key, value);
 	if (new == NULL)
 		return (0);
 	index = get_index(key, ht->size);
-	current = ht->array[index];
 	/* check if we have an entry at the index of the table */
-	if (current == NULL)
+	if (ht->array[index] == NULL)
 		ht->array[index] = new;
-	else if (strcmp(current->key, key) == 0)
+	else if (strcmp(ht->array[index]->key, key) == 0)
 	{
 		/* we have an entry with same key, so update entry */
-		new->next = current->next;
+		new->next = ht->array[index]->next;
 		free_node(ht->array[index]);
 		ht->array[index] = new;
 	}
@@ -49,15 +48,29 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 hash_node_t *create_node(const char *key, const char *value)
 {
 	hash_node_t *new = NULL;
+	char *k = NULL, *v = NULL;
 
 	/* confirm that key is not NULL or empty */
-	if (key == NULL || *key == '\0')
+	if (!key || *key == '\0' || !value)
 		return (NULL);
+	k = strdup(key);
+	if (k == NULL)
+		return (NULL);
+	v = strdup(value);
+	if (v == NULL)
+	{
+		free(k);
+		return (NULL);
+	}
 	new = malloc(sizeof(hash_node_t));
 	if (new == NULL)
+	{
+		free(k);
+		free(v);
 		return (NULL);
-	new->key = strdup(key);
-	new->value = strdup(value);
+	}
+	new->key = k;
+	new->value = v;
 	new->next = NULL;
 	return (new);
 }
@@ -134,5 +147,5 @@ int store_collision(hash_table_t *ht, const char *key, hash_node_t *new)
  */
 unsigned long int get_index(const char *key, unsigned long int size)
 {
-	return (key_index((unsigned char *)key, size));
+	return (key_index((const unsigned char *)key, size));
 }
