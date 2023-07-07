@@ -87,7 +87,7 @@ void free_node(hash_node_t *node)
 	{
 		if (node->key)
 			free(node->key);
-		mode->key = NULL;
+		node->key = NULL;
 		if (node->value)
 			free(node->value);
 		node->value = NULL;
