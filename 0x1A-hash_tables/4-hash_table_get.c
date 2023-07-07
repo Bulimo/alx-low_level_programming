@@ -29,7 +29,6 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	while (head)
 	{
 		/* check if key matches that of current element in collision list */
-		puts("checks being done in the collision list");
 		if (strcmp(head->key, key) == 0)
 			return (head->value);
 		head = head->next;

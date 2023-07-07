@@ -10,6 +10,8 @@ hash_table_t *hash_table_create(unsigned long int size)
 	hash_table_t *table = NULL;
 
 	/* allocate memory for a hash_table_t struct */
+	if (size == 0)
+		return (NULL);
 	table = calloc(sizeof(hash_table_t), 1);
 	if (table == NULL)
 		return (NULL);

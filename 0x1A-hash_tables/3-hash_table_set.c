@@ -26,15 +26,19 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	else if (strcmp(ht->array[index]->key, key) == 0)
 	{
 		/* we have an entry with same key, so update entry */
-		new->next = ht->array[index]->next;
-		free_node(ht->array[index]);
-		ht->array[index] = new;
+		free(ht->array[index]->value);
+		ht->array[index]->value = new->value;
+		new->value = NULL;
+		free_node(new);
 	}
 	else
 	{
 		/* we have a collision case, handle it */
 		if (!store_collision(ht, key, new))
+		{
+			free_node(new);
 			return (0);
+		}
 	}
 	return (1);
 }
@@ -107,39 +111,29 @@ int store_collision(hash_table_t *ht, const char *key, hash_node_t *new)
 {
 	unsigned long int index = 0;
 	hash_node_t *head = NULL;
-	hash_node_t *temp = NULL, *prev = NULL;
 
-	if (key == NULL || *key == '\0')
+	if (!ht || !(ht->array) || !key || *key == '\0')
 		return (0);
 	index = get_index(key, ht->size);
 	head = ht->array[index];
 	if (head == NULL)
 		return (0);
-	/* check for no element in the chained linked list */
-	if (head->next == NULL)
-	{
-		head->next = new;
-		head = head->next;
-		return (1);
-	}
-	/* check for when we have elements in the chained linked list */
-	temp = head;
-	while (temp)
+	while (head)
 	{
 		/* check if current element's key match */
-		if (strcmp(temp->key, key) == 0)
+		if (strcmp(head->key, key) == 0)
 		{
-			new->next = temp->next;
-			prev->next = new;
-			free_node(temp);
-			temp = new;
+			free(head->value);
+			head->value = new->value;
+			new->value = NULL;
+			free_node(new);
 			return (1);
 		}
-		prev = temp;
-		temp = temp->next;
+		head = head->next;
 	}
-	/* we add the new node at the end of the list */
-	temp = new;
+	/* we add the new node at the begining of the list */
+	new->next = ht->array[index];
+	ht->array[index] = new;
 	return (1);
 }
 
