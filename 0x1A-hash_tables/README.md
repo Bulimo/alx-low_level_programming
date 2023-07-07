@@ -33,3 +33,4 @@
 	. 4-hash_table_get.c - value that retrieves a value associated with key
 	. 5-hash_table_print.c - function that prints a hash table
 	. 6-hash_table_delete.c - function that deletes a hash table
+	. 100-sorted_hash_table.c - creates a hash table with a sorted linked list, by key (sorted on ASCII value)
