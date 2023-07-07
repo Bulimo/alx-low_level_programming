@@ -22,9 +22,6 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	/* we have an entry, compare the keys */
 	if (strcmp(ht->array[index]->key, key) == 0)
 		return (ht->array[index]->value);
-	/* we do not have a match, so check in the collision list */
-	/* if (ht->array[index]->next == NULL) */
-	/*	return (NULL);		 no collision, no key match found */
 	head = ht->array[index]->next;
 	while (head)
 	{

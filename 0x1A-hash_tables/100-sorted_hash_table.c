@@ -202,7 +202,7 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 	shash_node_t *head = NULL;
 
 	/* confirm for valid table and key */
-	if (!ht || !(ht->array) || !key || *key)
+	if (!ht || !(ht->array) || !key || !(*key))
 		return (NULL);
 
 	idx = key_index((const unsigned char *)key, ht->size);
