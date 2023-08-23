@@ -1,0 +1,22 @@
+# Makefile for building 'school' executable
+
+# Variables
+CC=gcc
+SRC = main.c school.c
+NAME = school
+OBJ = $(SRC:.c=.o)
+
+# Rule to build the executable
+all: $(NAME)
+
+# generate the individual object files
+# -o $@ says to put the output of the compilation in the file named on the left side of the :
+# the $< is the first item in the dependencies list
+# %.o: %.c
+# 	$(CC) -c $< -o $@
+
+# Compile and link the executable
+$(NAME): $(OBJ) m.h
+	$(CC) -o $(NAME) $(OBJ)
+
+# $@ and $^, which are the left and right sides of the :, respectively
