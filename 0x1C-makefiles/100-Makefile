@@ -19,13 +19,10 @@ all: $(NAME)
 # 	$(CC) -c $< -o $@
 
 # Compile and link the executable
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) m.h
 	$(CC) -o $(NAME) $(OBJ)
 
 # $@ and $^, which are the left and right sides of the :, respectively
-
-# m.h dependency
-$(OBJ): m.h
 
 # remove the editor temp files and executables
 clean:
