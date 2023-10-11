@@ -15,7 +15,7 @@ int binarysearch(int *array, size_t lower, size_t upper, int value)
 	if (array == NULL)
 		return (-1);
 
-	if (lower < upper)
+	if (lower <= upper)
 	{
 		print_array(array, lower, upper);
 		/* printf("lower = %lu, upper = %lu\n", lower, upper); */
