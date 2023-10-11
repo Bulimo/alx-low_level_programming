@@ -10,7 +10,7 @@
  */
 int binarysearch(int *array, size_t lower, size_t upper, int value)
 {
-	size_t i = 0;
+	size_t mid = 0;
 
 	if (array == NULL)
 		return (-1);
@@ -18,17 +18,16 @@ int binarysearch(int *array, size_t lower, size_t upper, int value)
 	if (lower <= upper)
 	{
 		print_array(array, lower, upper);
-		i = lower + ((upper - lower) / 2);
-		if (array[i] < value)
-			return (binarysearch(array, i + 1, upper, value));
-		if (array[i] > value)
-			return (binarysearch(array, lower, i - 1, value));
-		if (array[i] == value)
+		mid = (lower + upper) / 2;
+		if (array[mid] < value)
+			return (binarysearch(array, mid + 1, upper, value));
+		if (array[mid] > value)
+			return (binarysearch(array, lower, mid - 1, value));
+		if (array[mid] == value)
 		{
-			if (array[i - 1] == value)
-				return (binarysearch(array, lower, i, value));
-			else
-				return (i);
+			if (mid == 0 || array[mid - 1] != value)
+				return (mid);
+			return (binarysearch(array, lower, mid, value));
 		}
 	}
 	return (-1);
