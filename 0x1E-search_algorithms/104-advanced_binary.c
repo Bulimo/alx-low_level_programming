@@ -19,9 +19,9 @@ int binarysearch(int *array, size_t lower, size_t upper, int value)
 	{
 		print_array(array, lower, upper);
 		/* printf("lower = %lu, upper = %lu\n", lower, upper); */
-		mid = lower + (upper - lower) / 2;
+		mid = lower + ((upper - lower) / 2);
 
-		if (mid == 0 && array[mid] != value)
+		if (lower == upper && array[lower] != value)
 			return (-1);
 
 		if (array[mid] == value)
